@@ -17,7 +17,8 @@ class Johnny:
     def get_args(self):
         args = argparse.ArgumentParser()
         args.add_argument("host", help="Target to Knock")
-        args.add_argument("ports", help="Ports to knock, separated by space. example: \"80 443 445\"")
+        args.add_argument("ports", help="Ports to knock, separated by space. "
+                                        "\nexample: heres_johnny.py 10.10.10.10 \"80 443 445\"")
         parsed = args.parse_args()
         self.host = parsed.host
         self.ports = parsed.ports
