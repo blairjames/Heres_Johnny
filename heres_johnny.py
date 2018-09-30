@@ -37,13 +37,13 @@ class Johnny:
         print("Port order: " + str(p1) + " " + str(p2) + " " + str(p3))
         time.sleep(1)
         i:int = 0
-        while i < 3:
+        while i < 2:
             for p in ports:
                 port = str(p)
                 command = "\nnmap -T2 -sT -Pn --host-timeout 100 --max-retries 0 -p " + port + " " + self.host
                 print("\nExecuting: " + command)
                 subprocess.run([command], stdout=subprocess.PIPE, shell=True)
-                time.sleep(1)
+                time.sleep(.5)
             time.sleep(1)
             print("\nChecking for open SSH...")
             sshcheck = "nmap -T2 -sT -n " + self.host + " -Pn --open -p 22"
@@ -56,7 +56,9 @@ class Johnny:
                 print(self.host + " now has SSH open")
                 exit(0)
             else:
-                time.sleep(3)
+                print("\nSSH is not open on " + self.host)
+                print("\n*************************************************")
+                time.sleep(2)
             i += 1
 
 
