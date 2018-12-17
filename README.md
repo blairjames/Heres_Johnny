@@ -1,5 +1,5 @@
 # Heres_Johnny
-Port Knocker!!!, big bopper, show stopper. 
+Port Knocker!!!,show stopper. 
 
 Generates all permutations of input ports then uses them to port knock the target. 
 
